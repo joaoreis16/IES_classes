@@ -1,2 +1,0 @@
-
-# Remember to take notes as you go. Use your notebook (the “README” file). You may wish, for example, to explain what is a “Maven archetype” or prepare a quick cheat sheet on the naming conventions for groupId andartifactId (you will need this often...).
