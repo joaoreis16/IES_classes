@@ -1,1 +1,4 @@
-/home/joao/IES_98474/Lab01/Lab01_2/MyWeatherRadar/src/main/java/com/MyWeatherRadar/app/App.java
+/home/joao/IES_98474/lab1/lab1_2/MyWeatherRadar/src/main/java/com/MyWeatherRadar/app/IpmaCityForecast.java
+/home/joao/IES_98474/lab1/lab1_2/MyWeatherRadar/src/main/java/com/MyWeatherRadar/app/App.java
+/home/joao/IES_98474/lab1/lab1_2/MyWeatherRadar/src/main/java/com/MyWeatherRadar/app/IpmaService.java
+/home/joao/IES_98474/lab1/lab1_2/MyWeatherRadar/src/main/java/com/MyWeatherRadar/app/CityForecast.java
