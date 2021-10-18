@@ -62,6 +62,7 @@ cd lab1/lab1_2/MyWeatherRadar
 
 # 1.3 | GitHub
 
+```.gitignore``` - ficheiro para ignorar outros ficheiros ao dar push para o repositório
 
 
 # 1.4 | Docker
@@ -121,4 +122,27 @@ docker build -t getting-started .
 * ## Start an app container
 ```
 docker run -dp 3000:3000 getting-started
+```
+
+## Portainer CE: como instalar e executar
+
+```
+docker volume create portainer_data
+docker run -d -p 8000:8000 -p 9443:9443 --name portainer \    
+    --restart=always \    
+    -v /var/run/docker.sock:/var/run/docker.sock \    
+    -v portainer_data:/data \    
+    portainer/portainer-ce:latest
+```
+
+## Dockerize PostgreSQL (inside of postgreSQL folder)
+
+Build an image from the Dockerfile and assign it a name
+```
+docker build -t eg_postgresql .
+```
+
+Run the PostgreSQL server container (in the foreground):
+```
+docker run --rm -P --name pg_test eg_postgresql
 ```

@@ -49,17 +49,17 @@
     </dependency>
   </dependencies>
   
-<Configuration status="debug" name="baeldung" packages="">
-    <Appenders>
-	<Console name="stdout" target="SYSTEM_OUT">
-	    <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %p %m%n"/>
-	</Console>
-    </Appenders>
-</Configuration>
+  <Configuration status="debug" name="baeldung" packages="">
+      <Appenders>
+    <Console name="stdout" target="SYSTEM_OUT">
+        <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %p %m%n"/>
+    </Console>
+      </Appenders>
+  </Configuration>
 
-<Root level="error">
-    <AppenderRef ref="STDOUT"/>
-</Root>
+  <Root level="error">
+      <AppenderRef ref="STDOUT"/>
+  </Root>
 
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
