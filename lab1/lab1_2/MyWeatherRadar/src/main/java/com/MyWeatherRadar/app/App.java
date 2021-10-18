@@ -16,7 +16,7 @@ import java.util.logging.Logger;
  */
 public class App {
 
-    private static final int CITY_ID_AVEIRO = 1010500;
+    // private static final int CITY_ID_AVEIRO = 1010500;
     /*
     loggers provide a better alternative to System.out.println
     https://rules.sonarsource.com/java/tag/bad-practice/RSPEC-106
@@ -25,6 +25,15 @@ public class App {
 
     public static void  main(String[] args ) {
 
+        int CITY_ID;
+
+        if (args.length == 0){ 
+            CITY_ID = 1010500; // caso o utilizador não coloque nenhum argumento, por defeito, será utilizado o codigo da cidade de Aveiro
+
+        } else {
+            CITY_ID = Integer.parseInt( args[0] );
+        }
+        
         /*
         get a retrofit instance, loaded with the GSon lib to convert JSON into objects
          */
@@ -34,15 +43,24 @@ public class App {
                 .build();
 
         IpmaService service = retrofit.create(IpmaService.class);
-        Call<IpmaCityForecast> callSync = service.getForecastForACity(CITY_ID_AVEIRO);
+        Call<IpmaCityForecast> callSync = service.getForecastForACity(CITY_ID);
 
         try {
             Response<IpmaCityForecast> apiResponse = callSync.execute();
             IpmaCityForecast forecast = apiResponse.body();
 
+            // why this isn't working?
+
             if (forecast != null) {
                 logger.info( "max temp for today: " + forecast.getData().
                         listIterator().next().getTMax());
+                logger.info( "min temp for today: " + forecast.getData().
+                        listIterator().next().getTMin());
+
+                logger.info( "max temp for tomorrow: " + forecast.getData().
+                        listIterator().next().next().getTMax());
+                logger.info( "min temp for tomorrow: " + forecast.getData().
+                        listIterator().next().next().getTMin());
             } else {
                 logger.info( "No results!");
             }
