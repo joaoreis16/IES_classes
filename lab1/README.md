@@ -60,6 +60,10 @@ mvn exec:java -Dexec.mainClass=test.Main -f folder/pom.xm
 cd lab1/lab1_2/MyWeatherRadar
 ```
 
+# 1.3 | GitHub
+
+
+
 # 1.4 | Docker
 
 ## O que é?
