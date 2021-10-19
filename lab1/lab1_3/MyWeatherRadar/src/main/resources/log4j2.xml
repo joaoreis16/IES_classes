@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="DEBUG">
+<Configuration status="INFO">
     <Appenders>
-        <File name="LogToFile" fileName="myLog.log">
-            <PatternLayout>
-                <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %m%n</Pattern>
-            </PatternLayout>
-        </File>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout
+                pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n" />
+        </Console>
     </Appenders>
     <Loggers>
-        <Logger name="com.MyWeatherRadar.app.App" level="debug" additivity="false">
-            <AppenderRef ref="LogToFile"/>
-        </Logger>
-        <Root level="error">
-            <AppenderRef ref="LogToFile"/>
+        <Root level="debug" additivity="false">
+            <AppenderRef ref="console" />
         </Root>
     </Loggers>
 </Configuration>
