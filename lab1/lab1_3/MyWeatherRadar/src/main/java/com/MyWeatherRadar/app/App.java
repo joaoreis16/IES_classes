@@ -9,7 +9,9 @@ import weather.ipma_client.IpmaCityForecast;
 import weather.ipma_client.IpmaService;
 */
 
-import java.util.logging.Logger;
+// import java.util.logging.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * demonstrates the use of the IPMA API for weather forecast
@@ -21,7 +23,8 @@ public class App {
     loggers provide a better alternative to System.out.println
     https://rules.sonarsource.com/java/tag/bad-practice/RSPEC-106
      */
-    private static final Logger logger = Logger.getLogger(App.class.getName());
+    // private static final Logger logger = Logger.getLogger(App.class.getName());
+    private static Logger logger = LogManager.getLogger(App.class.getName());
 
     public static void  main(String[] args ) {
 
@@ -49,18 +52,13 @@ public class App {
             Response<IpmaCityForecast> apiResponse = callSync.execute();
             IpmaCityForecast forecast = apiResponse.body();
 
-            // why this isn't working?
-
             if (forecast != null) {
-                logger.info( "max temp for today: " + forecast.getData().
-                        listIterator().next().getTMax());
-                logger.info( "min temp for today: " + forecast.getData().
-                        listIterator().next().getTMin());
+                logger.info( "max temp for today: " + forecast.getData().listIterator().next().getTMax());
+                logger.info( "min temp for today: " + forecast.getData().listIterator().next().getTMin());
+                logger.info( "precipitation prob for today: " + forecast.getData().listIterator().next().getPrecipitaProb());
+                logger.info( "latitude: " + forecast.getData().listIterator().next().getLatitude());
+                logger.info( "longitude: " + forecast.getData().listIterator().next().getLongitude());
 
-                logger.info( "max temp for tomorrow: " + forecast.getData().
-                        listIterator().next().next().getTMax());
-                logger.info( "min temp for tomorrow: " + forecast.getData().
-                        listIterator().next().next().getTMin());
             } else {
                 logger.info( "No results!");
             }
