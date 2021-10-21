@@ -6,11 +6,11 @@ Maven é uma ferramenta de gestão e compilação com o intuito de fornecer aos 
 
 pom.xml - É um ficheiro XML que contém a informação sobre o projeto e os detalhes de configuração usados pelo Maven para construir o projeto. Contém default values para a maioria dos projetos.
 
-Maven Archetye - [COMPLETE]
+***Maven Archetype*** - definido como um modelo original a partir do qual fornece um meio consistente para gerar projectos Maven.
 
-groupId -  [COMPLETE]
+***groupId*** - identifica o projeto de forma única em todos os projetos
 
-artifactId -  [COMPLETE]
+***artifactId*** - nome do jar sem versão
 
 ## Instalar o Maven
 ```
@@ -48,17 +48,10 @@ mvn exec:java -Dexec.mainClass=test.Main -f folder/pom.xm
 
 ## Outros comandos frequentes
 
-* ```mvn clean``` limpa a pasta temporária
-* ```mvn test``` compila o código do programa e executa os testes
-* ```mvn verify``` compila o código do programa e executa os testes de integração
+* ```mvn clean``` - limpa a pasta temporária
+* ```mvn test``` - compila o código do programa e executa os testes
+* ```mvn verify``` - compila o código do programa e executa os testes de integração
 
-
-## Outras notas
-
-* Para compliar e correr o exercício 1.2, é necessário estar no seguinte diretório:
-```
-cd lab1/lab1_2/MyWeatherRadar
-```
 
 # 1.3 | GitHub
 
@@ -69,7 +62,7 @@ cd lab1/lab1_2/MyWeatherRadar
 
 ## O que é?
 
-[explicar Docker]
+O Docker é um serviço que usa virtualização de nível de sistema operacional para entregar software em pacotes chamados containers.
 
 ## Alguns comandos
 
@@ -106,7 +99,7 @@ You’ll notice a few flags being used. Here’s some more info on them:
 
 * ## What is a container?
 
-A container is a sandboxed process on your machine that is isolated from all other processes on the host machine.
+A container is a sandboxed process on your machine that is isolated from all other processes on the host machine. It's a isolated environment.
 
 * ## What is a container image?
 
@@ -146,3 +139,66 @@ Run the PostgreSQL server container (in the foreground):
 ```
 docker run --rm -P --name pg_test eg_postgresql
 ```
+# 1.5 | Notas
+
+Dentro da pasta api
+```
+mvn package
+```
+
+Depois, dentro da pasta user
+```
+mvn install:install-file -Dfile="/home/joao/3 ano/IES_98474/lab1/lab1_5/api/target/MyWeatherRadar-1.0-SNAPSHOT.jar
+"  -DgroupId="com.api.app" -DartifactId="api" -Dversion="1.0-SNAPSHOT" -Dpackaging=jar
+
+mvn package
+```
+
+# Review Questions 
+
+## A)
+
+The main phases in the default lifecycle are:
+* **validate**: check if all information necessary for the build is available
+* **compile**: compile the source code
+* **test-compile**: compile the test source code
+* **test**: run unit tests
+* **package**: package compiled source code into the distributable format (jar, war, …)
+* **integration-test**: process and deploy the package if needed to run integration tests
+* **install**: install the package to a local repository
+* **deploy**: copy the package to the remote repository
+
+## B)
+Maven main purpose is to congigure a project and handle the build activities and resulting artifacts. Maven can activate different plugins, including plugins to execute a specific class.
+
+## C)
+```
+git pull        # get the latest version of the project
+[fazer as alterações no projeto]
+git add .       # add the files that have been changed
+git commit -m "[description]" 
+git push        # publish your changes 
+```
+
+## D)
+To write good commit messages, people should include information like:
+* Describe why a change is being made
+* How does it address the issue?
+* What effects does the patch have?
+* Do not assume the reviewer understands what the original problem was.
+* Do not assume the code is self-evident self-documenting.
+* Read the commit message to see if it hints at improved code structure.
+* Describe any limitations of the current code.
+* Do not include patch set-specific comments.
+
+Other important thing is the commit message. This should fulfill some rules:
+* Separate subject from body with a blank line
+* Do not end the subject line with a period
+* Capitalize the subject line and each paragraph
+* Use the imperative mood in the subject line
+* Wrap lines at 72 characters
+* Use the body to explain what and why you have done something. In most cases, you can leave out details about how a change has been made.
+
+## E)
+
+Explicating dedicate resources makes data safer (from container deletion) and easier to backup production databases.
