@@ -46,8 +46,9 @@ Através do Postman, é possível enviar dados para a base de dados associada ao
 * é uma especialização de @Controller annotation
 
 
-## B) Create a visualization of the Spring Boot layers (UML diagramor similar), displaying the key abstractions in the solutionof 3.3, in particular: entities, repositories, servicesand REST controllers.
+## B) Create a visualization of the Spring Boot layers (UML diagramor similar), displaying the key abstractions in the solutionof 3.3, in particular: entities, repositories, services and REST controllers.
 
+está na diretoria seguinte ```lab3/UML_Diagram.png```
 
 ## C) Explain the annotations @Table, @Colum, @Id foundin the Employee entity.
 
