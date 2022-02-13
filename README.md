@@ -1,6 +1,6 @@
 # IES pratical classes 
 
-João António Assis Reis
+João Reis
 
 Nmec: 98474
 Turma: P5
