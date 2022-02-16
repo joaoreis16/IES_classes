@@ -1,15 +1,11 @@
-# IES pratical classes 
+## IES pratical classes 
 
-João Reis
-
-Nmec: 98474
+João Reis, 98474 </br>
 Turma: P5
 
 
-## grades
+### grades
 
-lab01: 18.4
-
-lab02: 17.3
-
-lab03: 14.0
+**lab01** : 18.4 </br>
+**lab02** : 17.3 </br>
+**lab03** : 14.0 </br>
